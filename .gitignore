@@ -1,0 +1,27 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# User-specific Xcode settings (don't share these)
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Swift Package Manager (if used later)
+.build/
+.swiftpm/
+
+# macOS system files
+.DS_Store
+*.swp
+*~
+
+# Cursor / VS Code (editor settings — optional to ignore)
+.cursor/
+.vscode/
