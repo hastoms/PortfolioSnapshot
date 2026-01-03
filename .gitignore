@@ -1,27 +1,34 @@
-# Xcode
+# Secrets - NEVER commit API keys!
+PortfolioSnapshot/Secrets.swift
+
+# Xcode User Data
+*.xcuserstate
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+
+# Build artifacts
 build/
 DerivedData/
-*.xcuserstate
-*.xccheckout
-*.moved-aside
-*.hmap
 *.ipa
 *.dSYM.zip
 *.dSYM
 
-# User-specific Xcode settings (don't share these)
-xcuserdata/
-*.xcworkspace/xcuserdata/
+# CocoaPods (if used later)
+Pods/
 
-# Swift Package Manager (if used later)
+# Carthage (if used later)
+Carthage/Build/
+
+# Swift Package Manager
 .build/
 .swiftpm/
 
-# macOS system files
+# macOS
 .DS_Store
 *.swp
-*~
+*~.nib
 
-# Cursor / VS Code (editor settings — optional to ignore)
-.cursor/
-.vscode/
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
