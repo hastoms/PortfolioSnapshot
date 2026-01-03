@@ -23,12 +23,28 @@ struct SettingsView: View {
                 
                 Section {
                     Link(destination: URL(string: "https://twelvedata.com")!) {
-                        Label("Twelve Data Website", systemImage: "link")
+                        Label("Twelve Data Website", systemImage: "chart.line.uptrend.xyaxis")
                     }
                 } header: {
                     Text("Data Provider")
                 } footer: {
                     Text("Market data is provided by Twelve Data's free API tier.")
+                }
+                
+                Section("Legal") {
+                    Link(destination: URL(string: "https://stevenson.mobi/apps/PortfolioSnapshot/privacy")!) {
+                        Label("Privacy Policy", systemImage: "hand.raised")
+                    }
+                    
+                    Link(destination: URL(string: "https://stevenson.mobi/apps/PortfolioSnapshot/terms")!) {
+                        Label("Terms of Use", systemImage: "doc.text")
+                    }
+                }
+                
+                Section("Support") {
+                    Link(destination: URL(string: "mailto:developer@stevenson.mobi")!) {
+                        Label("Contact Developer", systemImage: "envelope")
+                    }
                 }
                 
                 Section("App Info") {
@@ -62,9 +78,16 @@ struct AboutView: View {
             VStack(spacing: 32) {
                 // App Icon/Logo area
                 VStack(spacing: 12) {
+                    // Use the app icon image if available, otherwise SF Symbol
                     Image(systemName: "chart.pie.fill")
                         .font(.system(size: 72))
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [Color(red: 0.2, green: 0.5, blue: 0.9), Color(red: 0.4, green: 0.7, blue: 0.3)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
                     
                     Text("Portfolio Snapshot")
                         .font(.title)
@@ -147,6 +170,21 @@ struct AboutView: View {
                 }
                 .padding(.horizontal)
                 
+                // Legal Links
+                VStack(spacing: 12) {
+                    Link(destination: URL(string: "https://stevenson.mobi/apps/PortfolioSnapshot/privacy")!) {
+                        Text("Privacy Policy")
+                            .font(.footnote)
+                            .foregroundStyle(.blue)
+                    }
+                    
+                    Link(destination: URL(string: "https://stevenson.mobi/apps/PortfolioSnapshot/terms")!) {
+                        Text("Terms of Use")
+                            .font(.footnote)
+                            .foregroundStyle(.blue)
+                    }
+                }
+                
                 // Disclaimer
                 VStack(spacing: 8) {
                     Text("Disclaimer")
@@ -154,7 +192,7 @@ struct AboutView: View {
                         .fontWeight(.semibold)
                         .foregroundStyle(.secondary)
                     
-                    Text("This app is for informational purposes only. Market data may be delayed. Not financial advice.")
+                    Text("This app is for informational purposes only. Market data may be delayed. Not financial advice. Past performance does not guarantee future results.")
                         .font(.caption2)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
@@ -207,4 +245,3 @@ struct FeatureRow: View {
         AboutView()
     }
 }
-
